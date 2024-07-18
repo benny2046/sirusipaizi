@@ -115,10 +115,4 @@ class DonasiController extends Controller
         // redirect to index
         return redirect()->route('donasi.index')->with(['success' => 'Data berhasil dihapus!']);
     }
-    // public function unduhGambar(Donasi $donasi)
-    // {
-    //     $imagePath = Donasi::url($donasi->image);
-
-    //     return response()->download(public_path($imagePath));
-    // }
 }

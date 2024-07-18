@@ -61,16 +61,6 @@ class UserController extends Controller
         ]);
     }
 
-    // public function edit($id)
-    // {
-    //     $user = User::find($id); // Mengambil data pengunjung berdasarkan ID
-
-    //     if (!$user) {
-    //         return redirect('/users')->with('error', 'Pengunjung tidak ditemukan.'); // Redirect jika ID tidak ditemukan
-    //     }
-
-    //     return view('profile.edit', ['user' => $user]);
-    // }
     public function edit(Request $req)
     {
         $id = $req->id;

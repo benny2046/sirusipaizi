@@ -8,18 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class LaporanPendamping extends Model
 {
     use HasFactory;
-    protected $table = 'laporan_pendamping';
+    protected $table = 'pendamping';
     protected $fillable = [
-        'rsp',
         'nama',
-        'provinsi_alamat',
+        'phone',
+        'provinsi',
         'jenis_kelamin',
-        'usia',
+        'umur',
         'pendidikan',
         'pekerjaan',
-        'tlp',
-        'reservasi_id',
         'tanggal_masuk',
+        'pasien_id',
         'created_at',
         'updated_at',
     ];

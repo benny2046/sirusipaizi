@@ -44,7 +44,7 @@
                             <input type="text" class="form-control" id="kecamatan" name="kecamatan" required>
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label" class="form-label" for="kabupaten">Kabupaten</label>
+                            <label class="form-label" class="form-label" for="kabupaten">Kabupaten / Kota</label>
                             <input type="text" class="form-control" id="kabupaten" name="kabupaten" required>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
 
                     <label class="form-label" for="tambah_pendamping">Tambah Pendamping:</label>
                     <input type="checkbox" name="tambah_pendamping" id="tambah_pendamping" onclick="togglePendamping()">
-        
+
                     <div id="pendamping-section" style="display: none;" class="form-group">
                         <div class="row">
                             <div class="col-md-6">
@@ -120,7 +120,7 @@
                             <div class="col-md-6">
                                 <label class="form-label" for="provinsi_pendamping">Alamat
                                     Pendamping</label>
-                                <input type="text" class="form-control" name="provinsi_pendamping">
+                                <input type="text" class="form-control" name="provinsi_pendamping" placeholder="Provinsi">
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label" for="jeniskelaminpendamping">Jenis Kelamin

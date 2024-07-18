@@ -62,6 +62,7 @@ class PasienController extends Controller
             'kategori_penyakit' => 'required|string',
             'tanggal_masuk' => 'required|date',
             'kamar_id' => 'required|exists:kamar,id',
+            'reservasi_id' => 'required|exists:reservasi,id',
         ]);
 
         //cari kamar dengan kasur tersedia

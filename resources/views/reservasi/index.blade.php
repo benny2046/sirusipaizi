@@ -94,7 +94,23 @@
                                             <td class="cell" style="text-align:center;">{{ $data->alamat }}</td>
                                             <td class="cell" style="text-align:center;">
                                                 {{ carbon\carbon::parse($data->tanggal_masuk)->isoFormat('DD MMMM YYYY') }}</td>
-                                            <td class="cell" style="text-align:center;">{{ $data->status }}</td>
+                                                <td class="cell" style="text-align:center;">{{ $data->status }}</td>
+                                                @if (Auth::user()->role == 'admin')
+                                                    <td class="cell" style="text-align:center;">
+                                                        @if ($data->status != 'Diterima')
+                                                            <form class="d-inline" action="{{ route('reservasi.setDiterima', $data->id) }}" method="POST">
+                                                                @csrf
+                                                                @method('PUT')
+                                                                <input type="hidden" name="status" value="Diterima" class="btn-sm app-btn-primary">
+                                                                <button class="btn-sm app-btn-primary" type="submit">Diterima</button>
+                                                            </form>
+                                                        @endif
+                                                        <a href="{{ route('reservasi.ditolak', $data->id) }}" class="btn-sm app-btn-danger">Ditolak</a>
+                                                        <form class="d-inline" action="{{ route('reservasi.show', $data->id) }}">
+                                                            <button type="submit">Detail</button>
+                                                        </form>
+                                                    </td>
+                                            {{-- <td class="cell" style="text-align:center;">{{ $data->status }}</td>
                                             <td class="cell" style="text-align:center;">
                                                 @if (Auth::user()->role != 'admin')
                                                 @else
@@ -106,20 +122,20 @@
                                                         <input type="hidden" name="status" value="Diterima"
                                                             class="btn-sm app-btn-primary">
                                                         <button class="btn-sm app-btn-primary"
-                                                            type="submit">Diterima</button>
-                                                    </form>
+                                                            type="submit">Diterima</button> --}}
+                                                    {{-- </form> --}}
                                                     {{-- <form class="d-inline">
                                                         <button href="{{ route('reservasi.ditolak', $data->id) }}" class="btn-sm app-btn-danger" type="submit">Ditolak</button>
                                                     </form> --}}
-                                                    <a href="{{ route('reservasi.ditolak', $data->id) }}"
+                                                    {{-- <a href="{{ route('reservasi.ditolak', $data->id) }}"
                                                         class="btn-sm app-btn-danger">Ditolak</a>
                                                     <form class="d-inline"
                                                         action="{{ route('reservasi.show', $data->id) }}">
                                                         <button type="submit">Detail</button>
-                                                    </form>
+                                                    </form> --}}
                                                     {{-- <a type="submit" href="{{ route('reservasi.show', $data->id) }}">Detail</a> --}}
                                                 @endif
-                                            </td>
+                                            {{-- </td> --}}
                                         </tr>
                                     @endforeach
                                 </tbody>

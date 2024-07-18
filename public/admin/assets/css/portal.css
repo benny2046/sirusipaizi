@@ -11697,13 +11697,13 @@ button.close:focus {
 
 .app-btn-success {
   color: #27CA1D;
-  background: #fff;
+  background: #1C691F;
   border: 1px solid #51EF79;
 }
 .app-btn-success:hover {
   color: #08980D;
   border: 1px solid #08981A;
-  background: #fff;
+  background: #27CA1D;
 }
 
 .app-btn-danger{

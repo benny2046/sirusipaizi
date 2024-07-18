@@ -247,6 +247,8 @@
                             </li>
                         @endif
                         <!--//nav-penghuni-->
+                        @if (Auth::user()->role != 'admin')
+                                    @else
                         <li class="nav-item has-submenu">
                             <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse"
                                 data-bs-target="#submenu-5" aria-expanded="false" aria-controls="submenu-1">
@@ -270,20 +272,19 @@
                             </a><!--//nav-link-->
                             <div id="submenu-5" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
                                 <ul class="submenu-list list-unstyled">
-                                    @if (Auth::user()->role != 'admin')
-                                    @else
+                                    
                                         <li class="submenu-item">
                                             <a class="nav-link" href="{{ route('user.index') }}">Daftar Pengunjung
                                             </a>
                                         </li>
-                                    @endif
-                                    <li class="submenu-item">
-                                        <a class="submenu-link" href="pengaturan-profile">Pengaturan
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li><!--nav profil-->
+                                        <li class="submenu-item">
+                                            <a class="submenu-link" href="/pengaturan-profile">Pengaturan
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li><!--nav profil-->
+                            @endif
                     </ul>
                     <!--//app-menu-->
                 </nav>

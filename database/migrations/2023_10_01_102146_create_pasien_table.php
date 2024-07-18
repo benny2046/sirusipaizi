@@ -34,6 +34,7 @@ return new class extends Migration
             $table->date('tanggal_masuk');
             $table->foreignId('kamar_id');
             $table->foreignId('pendamping_id')->nullable();
+            $table->foreignId('reservasi_id')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('NULL ON UPDATE CURRENT_TIMESTAMP'))->nullable();
         });

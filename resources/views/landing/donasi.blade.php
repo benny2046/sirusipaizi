@@ -6,7 +6,6 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
-                <!-- <p class="d-inline-block border rounded-pill py-15 px-60">Testimonial</p>
                 <h1>What Say Our Patients!</h1> -->
                 <div class="col-12">
                     <button type="button" class="btn btn-primary rounded-pill py-3 px-5 mt-3"

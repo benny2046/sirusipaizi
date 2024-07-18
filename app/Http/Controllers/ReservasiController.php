@@ -139,84 +139,9 @@ class ReservasiController extends Controller
             'status_rawat' => 'checkin',
             'tanggal_masuk' => $reservasi->tanggal_masuk,
             'kamar_id' => $availableKamar->id,
+            'reservasi_id' => $reservasi->id,
         ];
         $pasien = Pasien::create($pasienData);
-
-        //tambah laporan pasien
-        // $laporanPasien = [
-        //     'nama_rsp' => 'Sumatera Barat',
-        //     'nama_pasien' => $reservasi->nama,
-        //     'alamat' => $reservasi->alamat,
-        //     'kelurahan' => $reservasi->kelurahan,
-        //     'kecamatan' => $reservasi->kecamatan,
-        //     'kabupaten' => $reservasi->kabupaten,
-        //     'provinsi' => $reservasi->provinsi,
-        //     'jenis_kelamin' => $reservasi->jeniskelamin,
-        //     'umur' => $reservasi->umur,
-        //     'pendidikan' => $reservasi->pendidikan,
-        //     'pekerjaan' => $reservasi->pekerjaan,
-        //     'jenis_penyakit' => $reservasi->jenis_penyakit,
-        //     'kategori_penyakit' => $reservasi->kategori_penyakit,
-        //     'nama_pendamping' => $reservasi->nama_pendamping,
-        //     'status_rawat' => 'checkin',
-        //     'tanggal_masuk' => $reservasi->tanggal_masuk,
-        // ];
-
-        // Mengonversi umur ke dalam kategori tertentu
-        // $umur = $reservasi->umur;
-        // if ($umur >= 0 && $umur <= 5) {
-        //     $kategori_umur = 'Balita';
-        // } elseif ($umur > 5 && $umur <= 11) {
-        //     $kategori_umur = 'Anak-anak';
-        // } elseif ($umur > 11 && $umur <= 25) {
-        //     $kategori_umur = 'Remaja';
-        // } elseif ($umur > 25 && $umur <= 40) {
-        //     $kategori_umur = 'Dewasa';
-        // } elseif ($umur > 40 && $umur <= 60) {
-        //     $kategori_umur = 'Orang tua';
-        // } elseif ($umur > 60 && $umur <= 80) {
-        //     $kategori_umur = 'Lansia';
-        // } else {
-        //     $kategori_umur = 'Usia tidak terkategori';
-        // }
-        // Menambahkan kategori umur ke dalam array $laporanPasien
-        // $laporanPasien['umur'] = $kategori_umur;
-        // $laporan_pasien = LaporanPasien::create($laporanPasien);
-
-        //tambah laporan pendamping
-        // $laporanPendamping = [
-        //     'rsp' => 'Sumatera Barat',
-        //     'nama' => $reservasi->nama,
-        //     'provinsi_alamat' => $reservasi->alamat,
-        //     'jenis_kelamin' => $reservasi->jeniskelamin,
-        //     'usia' => $reservasi->umur,
-        //     'pendidikan' => $reservasi->pendidikan,
-        //     'pekerjaan' => $reservasi->pekerjaan,
-        //     'nama_pendamping' => $reservasi->nama_pendamping,
-        //     'status_rawat' => 'checkin',
-        //     'tanggal_masuk' => $reservasi->tanggal_masuk,
-        // ];
-
-        // // Mengonversi umur ke dalam kategori tertentu
-        // $umur = $reservasi->umur;
-        // if ($umur >= 0 && $umur <= 5) {
-        //     $kategori_umur = 'Balita';
-        // } elseif ($umur > 5 && $umur <= 11) {
-        //     $kategori_umur = 'Anak-anak';
-        // } elseif ($umur > 11 && $umur <= 25) {
-        //     $kategori_umur = 'Remaja';
-        // } elseif ($umur > 25 && $umur <= 40) {
-        //     $kategori_umur = 'Dewasa';
-        // } elseif ($umur > 40 && $umur <= 60) {
-        //     $kategori_umur = 'Orang tua';
-        // } elseif ($umur > 60 && $umur <= 80) {
-        //     $kategori_umur = 'Lansia';
-        // } else {
-        //     $kategori_umur = 'Usia tidak terkategori';
-        // }
-        // // Menambahkan kategori umur ke dalam array $laporanPasien
-        // $laporanPasien['umur'] = $kategori_umur;
-        // $laporan_pasien = Pasien::create($laporanPasien);
 
         $reservasi = Reservasi::findOrFail($id);
         if ($reservasi->nama_pendamping !== null) {

@@ -25,6 +25,14 @@ class DatabaseSeeder extends Seeder
             'phone' => '081371008814',
             'role' => 'admin'
         ]);
+        DB::table('users')->insert([
+            'rsp' => 'Sumatera Barat',
+            'name' => 'jamal',
+            'email' => 'jamal@gmail.com',
+            'password' => Hash::make('12qwaszx'),
+            'phone' => '087759244448',
+            'role' => 'pengunjung'
+        ]);
         DB::table('kamar')->insert(
             [
                 'nama_kamar' => 'Kamar Pertama',
