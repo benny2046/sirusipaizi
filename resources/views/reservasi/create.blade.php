@@ -160,7 +160,7 @@
                     <div class="form-group">
                         <label class="font-weight-bold">Surat rujukan dari Rumash Sakit</label>
                         <input type="file" class="form-control @error('file') is-invalid @enderror"
-                            name="file">
+                            name="file" required>
                         <!-- error message untuk title -->
                         @error('file')
                             <div class="alert alert-danger mt-2">

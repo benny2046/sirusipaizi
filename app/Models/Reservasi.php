@@ -24,6 +24,7 @@ class Reservasi extends Model
         'kabupaten',
         'provinsi',
         'jeniskelamin',
+        'status',
         'umur',
         'pendidikan',
         'pekerjaan',
@@ -37,10 +38,9 @@ class Reservasi extends Model
         'jeniskelaminpendamping',
         'phone_pendamping',
         'provinsi_pendamping',
-        'user_id',
         'tanggal_masuk_pendamping',
+        'user_id',
         'file',
-        'status',
     ];
 
     // Relasi dengan model Pasien

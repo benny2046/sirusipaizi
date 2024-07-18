@@ -188,16 +188,18 @@
                     <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item bg-light rounded h-100 p-5">
                             <h4 class="mb-3">Jenis Kelamin</h4>
-                            <form id="filterForm1" method="GET" action="{{ route('landing.index') }}">
+                            <form id="filterForm1" method="GET" action="/landing">
+                                @csrf
                                 
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="start_date1">Start Date:</label>
-                                        <input type="date" id="start_date1" name="start_date1" value="{{ $startDate1 }}">
+                                        <input type="date" id="start_date1" name="start_date1" value="{{ request('startDate1') }}">
+                                        {{-- <input type="date" id="start_date1" name="start_date1" value="{{ $startDate1 }}"> --}}
                                     </div>
                                     <div class="col">
                                         <label for="end_date1">End Date:</label>
-                                        <input type="date" id="end_date1" name="end_date1" value="{{ $endDate1 }}">
+                                        <input type="date" id="end_date1" name="end_date1" value="{{ request('endDate1') }}">
                                     </div>
                                     <div class="col-auto align-self-end">
                                         <button type="button" onclick="filterData(1)">Filter</button>
@@ -212,16 +214,16 @@
                     <div class="col-lg-6 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="service-item bg-light rounded h-100 p-5">
                             <h4 class="mb3">Daerah Asal</h4>
-                            <form id="filterForm2" method="GET" action="{{ route('landing.index') }}">
+                            <form id="filterForm2" method="GET" action="/landing">
                                 
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="start_date2">Start Date:</label>
-                                        <input type="date" id="start_date2" name="start_date2" value="{{ $startDate2 }}">
+                                        <input type="date" id="start_date2" name="start_date2" value="{{ request('startDate2') }}">
                                     </div>
                                     <div class="col">
                                         <label for="end_date2">End Date:</label>
-                                        <input type="date" id="end_date2" name="end_date2" value="{{ $endDate2 }}">
+                                        <input type="date" id="end_date2" name="end_date2" value="{{ request('endDate2') }}">
                                     </div>
                                     <div class="col-auto align-self-end">
                                         <button type="button" onclick="filterData(2)">Filter</button>
@@ -239,16 +241,16 @@
                     <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item bg-light rounded h-100 p-5">
                             <h4 class="mb-3">Jumlah Sahabat yang Menerima Manfaat</h4>
-                            <form id="filterForm3" method="GET" action="{{ route('landing.index') }}">
+                            <form id="filterForm3" method="GET" action="/landing">
                                 
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="start_date3">Start Date:</label>
-                                        <input type="date" id="start_date3" name="start_date3" value="{{ $startDate3 }}">
+                                        <input type="date" id="start_date3" name="start_date3" value="{{ request('startDate3') }}">
                                     </div>
                                     <div class="col">
                                         <label for="end_date3">End Date:</label>
-                                        <input type="date" id="end_date3" name="end_date3" value="{{ $endDate3 }}">
+                                        <input type="date" id="end_date3" name="end_date3" value="{{ request('endDate3') }}">
                                     </div>
                                     <div class="col-auto align-self-end">
                                         <button type="button" onclick="filterData(3)">Filter</button>
@@ -263,16 +265,16 @@
                     <div class="col-lg-6 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="service-item bg-light rounded h-100 p-5">
                             <h4 class="mb-3">Penyakit</h4>
-                            <form id="filterForm4" method="GET" action="{{ route('landing.index') }}">
+                            <form id="filterForm4" method="GET" action="/landing">
                                 
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="start_date4">Start Date:</label>
-                                        <input type="date" id="start_date4" name="start_date4" value="{{ $startDate4 }}">
+                                        <input type="date" id="start_date4" name="start_date4" value="{{ request('startDate4') }}">
                                     </div>
                                     <div class="col">
                                         <label for="end_date4">End Date:</label>
-                                        <input type="date" id="end_date4" name="end_date4" value="{{ $endDate4 }}">
+                                        <input type="date" id="end_date4" name="end_date4" value="{{ request('endDate4') }}">
                                     </div>
                                     <div class="col-auto align-self-end">
                                         <button type="button" onclick="filterData(4)">Filter</button>

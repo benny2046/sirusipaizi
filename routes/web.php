@@ -41,9 +41,9 @@ Route::post('/reset-passwordd', [UserController::class, 'resetpassword']);
 Route::post('/landing/tambah-bukti-donasi', [LandingController::class, 'store'])->name('landing.store');
 
 Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-Route::get('/index', [LandingController::class, 'index2'])->name('landing.index2');
+// Route::get('/landing/home', [LandingController::class, 'index2'])->name('landing.index2');
 
-Route::get('/chart', [LandingController::class, 'chart'])->name('landing.chart');
+// Route::get('/chart', [LandingController::class, 'chart'])->name('landing.chart');
 Route::get('/landing/about', [LandingController::class, 'indexabout'])->name('landing.about');
 Route::get('/landing/pendaftaran', [LandingController::class, 'reservasi'])->name('landing.reservasi');
 Route::get('/landing/kontak', [LandingController::class, 'kontak'])->name('landing.kontak');

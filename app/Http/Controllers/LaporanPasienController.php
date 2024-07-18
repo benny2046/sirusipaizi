@@ -57,7 +57,7 @@ class LaporanPasienController extends Controller
             // Filter berdasarkan pencarian nama
             $queryBuilder->where('nama', 'like', '%' . $query . '%');
         }
-
+        
         // Mengambil data pasien dengan paginasi, termasuk yang sudah dihapus
         $varlaporanpasien = $queryBuilder->latest('created_at')->paginate(10);
 
