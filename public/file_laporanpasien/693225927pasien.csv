@@ -1,0 +1,4 @@
+"id","nama","phone","alamat","kelurahan","kecamatan","kabupaten","provinsi","jeniskelamin","umur","pendidikan","pekerjaan","jenis_penyakit","kategori_penyakit","tanggal_masuk","kamar_id","pendamping_id","created_at","updated_at"
+"1","Sagita Rohana","081371008814","sako duo","SAKO DUA","KAYU ARO BARAT","KABUPATEN KERINCI","JAMBI","perempuan","23","s1","IRT","Kanker Payudara","Kanker","2023-11-20","1","1","2023-11-28 05:20:06","2023-11-28 05:20:08"
+"2","rea","081367218893","sako duo","SAKO DUA","KAYU ARO BARAT","KABUPATEN KERINCI","JAMBI","perempuan","23","s1","pedagang","Kanker Payudara","Kanker","2023-12-01","1","2","2023-12-01 02:54:33","2023-12-01 02:54:33"
+"4","rea","081367218893","sako duo","SAKO DUA","KAYU ARO BARAT","KABUPATEN KERINCI","JAMBI","perempuan","23","s1","pedagang","Kanker Payudara","Kanker","2023-12-01","2","4","2023-12-01 03:02:04","2023-12-01 03:02:04"
