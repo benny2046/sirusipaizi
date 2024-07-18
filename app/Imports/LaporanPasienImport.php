@@ -31,8 +31,8 @@ class LaporanPasienImport implements ToModel
             'kategori_penyakit' => $row[14],
             'status_rawat' => $row[15],
             'tanggal_masuk' => $row[16],
-            'created_at' => $row[19],
-            'deleted_at' => $row[21],
+            'created_at' => $row[20],
+            'deleted_at' => $row[22],
         ]);
     }
 }

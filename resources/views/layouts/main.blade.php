@@ -137,7 +137,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="/" class="nav-item nav-link">Beranda</a>
-                <a href="/tentang-kami" class="nav-item nav-link">Tentang Kami</a>
+                <a href="/landing/about" class="nav-item nav-link">Tentang Kami</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
@@ -189,8 +189,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">SIRUSIP</a>, All
-                        Right Reserved.
+                        &copy; <a class="border-bottom" href="#">SIRUSIP</a>, Tugas Akhir - Benny Kurniawan
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         Designed By

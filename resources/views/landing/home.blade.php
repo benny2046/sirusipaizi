@@ -193,12 +193,11 @@
                                 
                                 <div class="row mb-3">
                                     <div class="col">
-                                        <label for="start_date1">Start Date:</label>
+                                        <label for="start_date1">Tanggal Awal:</label>
                                         <input type="date" id="start_date1" name="start_date1" value="{{ request('startDate1') }}">
-                                        {{-- <input type="date" id="start_date1" name="start_date1" value="{{ $startDate1 }}"> --}}
                                     </div>
                                     <div class="col">
-                                        <label for="end_date1">End Date:</label>
+                                        <label for="end_date1">Tanggal Akhir:</label>
                                         <input type="date" id="end_date1" name="end_date1" value="{{ request('endDate1') }}">
                                     </div>
                                     <div class="col-auto align-self-end">
@@ -218,11 +217,11 @@
                                 
                                 <div class="row mb-3">
                                     <div class="col">
-                                        <label for="start_date2">Start Date:</label>
+                                        <label for="start_date2">Tanggal Awal:</label>
                                         <input type="date" id="start_date2" name="start_date2" value="{{ request('startDate2') }}">
                                     </div>
                                     <div class="col">
-                                        <label for="end_date2">End Date:</label>
+                                        <label for="end_date2">Tanggal Akhir:</label>
                                         <input type="date" id="end_date2" name="end_date2" value="{{ request('endDate2') }}">
                                     </div>
                                     <div class="col-auto align-self-end">
@@ -245,11 +244,11 @@
                                 
                                 <div class="row mb-3">
                                     <div class="col">
-                                        <label for="start_date3">Start Date:</label>
+                                        <label for="start_date3">Tanggal Awal:</label>
                                         <input type="date" id="start_date3" name="start_date3" value="{{ request('startDate3') }}">
                                     </div>
                                     <div class="col">
-                                        <label for="end_date3">End Date:</label>
+                                        <label for="end_date3">Tanggal Akhir:</label>
                                         <input type="date" id="end_date3" name="end_date3" value="{{ request('endDate3') }}">
                                     </div>
                                     <div class="col-auto align-self-end">
@@ -269,11 +268,11 @@
                                 
                                 <div class="row mb-3">
                                     <div class="col">
-                                        <label for="start_date4">Start Date:</label>
+                                        <label for="start_date4">Tanggal Awal:</label>
                                         <input type="date" id="start_date4" name="start_date4" value="{{ request('startDate4') }}">
                                     </div>
                                     <div class="col">
-                                        <label for="end_date4">End Date:</label>
+                                        <label for="end_date4">Tanggal Akhir:</label>
                                         <input type="date" id="end_date4" name="end_date4" value="{{ request('endDate4') }}">
                                     </div>
                                     <div class="col-auto align-self-end">
@@ -515,7 +514,7 @@
             kategoriPenyakitBulananChart.data.labels = data.jPenyakitk;
             kategoriPenyakitBulananChart.update();
         }
-
+        // jenis kelamin
         var ctx1 = document.getElementById("jenisKelaminChart").getContext("2d");
         var jenisKelaminChart = new Chart(ctx1, {
             type: "pie",
@@ -537,7 +536,7 @@
                 },
             },
         });
-
+        // asal daerah
         var ctx2 = document.getElementById('daerahPasienChart').getContext('2d');
         var daerahPasienChart = new Chart(ctx2, {
             type: 'bar',
@@ -547,14 +546,14 @@
                     label: 'Jumlah Pasien',
                     data: @json($jkabupaten->values()),
                     backgroundColor: [
-                            'rgba(204,0,0)',
-                            'rgba(230,145,56)',
-                            'rgba((241,194,50)',
-                            'rgba(106,168,79)',
-                            'rgba(69,129,142)',
-                            'rgba(61,133,198)',
-                            'rgba(103,78,167)',
-                            'rgba(166,77,121)'
+                            'rgba(34,107,33)',
+                            'rgba(46,146,45)',
+                            'rgba(58,186,57)',
+                            'rgba(90,204,89)',
+                            'rgba(112,192,112)',
+                            'rgba(153,210,153)',
+                            'rgba(46,146,45)',
+                            'rgba(58,186,57)'
                         ],
                         borderColor: [
                             'rgba(255, 99, 132, 1)',
@@ -581,7 +580,7 @@
                 }
             }
         });
-
+        // semua data pasien
         var ctx3 = document.getElementById('rumahSinggahPasienChart').getContext('2d');
         var rumahSinggahPasienChart = new Chart(ctx3, {
             type: 'line',
@@ -607,7 +606,7 @@
                 }
             }
         });
-
+        // penyakit
         var ctx4 = document.getElementById('kategoriPenyakitBulananChart').getContext('2d');
         var kategoriPenyakitBulananChart = new Chart(ctx4, {
             type: 'bar',
@@ -617,14 +616,14 @@
                     label: 'Jumlah Penyakit',
                     data: @json($jPenyakit),
                     backgroundColor: [
-                            'rgba(204,0,0)',
-                            'rgba(230,145,56)',
-                            'rgba((241,194,50)',
-                            'rgba(106,168,79)',
-                            'rgba(69,129,142)',
-                            'rgba(61,133,198)',
-                            'rgba(103,78,167)',
-                            'rgba(166,77,121)'
+                            'rgba(34,107,33)',
+                            'rgba(46,146,45)',
+                            'rgba(58,186,57)',
+                            'rgba(90,204,89)',
+                            'rgba(112,192,112)',
+                            'rgba(153,210,153)',
+                            'rgba(46,146,45)',
+                            'rgba(58,186,57)'
                         ],
                         borderColor: [
                             'rgba(255, 99, 132, 1)',
