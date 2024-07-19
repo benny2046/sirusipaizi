@@ -175,7 +175,7 @@
                                             <span>{{ $laporanpasien->tanggal_masuk }}</span>
                                         </td>
                                         <td class="cell" style="text-align:center;">
-                                            <span>{{ $laporanpasien->deleted_at }}</span>
+                                            <span>{{ $laporanpasien->deleted_at ? $laporanpasien->deleted_at->format('d-m-Y') : '' }}</span>
                                         </td>
                                         <td class="cell" style="text-align:center;">
                                             <a class="btn-sm app-btn-secondary"
