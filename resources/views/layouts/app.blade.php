@@ -247,36 +247,36 @@
                             </li>
                         @endif
                         <!--//nav-penghuni-->
-                        @if (Auth::user()->role != 'admin')
-                                    @else
                         <li class="nav-item has-submenu">
                             <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse"
-                                data-bs-target="#submenu-5" aria-expanded="false" aria-controls="submenu-1">
-                                <span class="nav-icon">
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-person"
+                            data-bs-target="#submenu-5" aria-expanded="false" aria-controls="submenu-1">
+                            <span class="nav-icon">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-person"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
-                                            d="M12 1H4a1 1 0 0 0-1 1v10.755S4 11 8 11s5 1.755 5 1.755V2a1 1 0 0 0-1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
+                                        d="M12 1H4a1 1 0 0 0-1 1v10.755S4 11 8 11s5 1.755 5 1.755V2a1 1 0 0 0-1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
                                         <path fill-rule="evenodd" d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                     </svg>
                                 </span>
-                                </span class=nav-link-text>Profile</span>
-                                <span class="submenu-arrow">
+                            </span class=nav-link-text>Profile</span>
+                            <span class="submenu-arrow">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16"
                                         class="bi bi-chevron-down" fill="currentColor"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
-                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                                     </svg>
                                 </span><!--//submenu-arrow-->
                             </a><!--//nav-link-->
                             <div id="submenu-5" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
                                 <ul class="submenu-list list-unstyled">
-                                    
+                                    @if (Auth::user()->role != 'admin')
+                                                @else
                                         <li class="submenu-item">
                                             <a class="nav-link" href="{{ route('user.index') }}">Daftar Pengunjung
                                             </a>
                                         </li>
+                                        @endif
                                         <li class="submenu-item">
                                             <a class="submenu-link" href="/pengaturan-profile">Pengaturan
                                             </a>
@@ -284,7 +284,6 @@
                                     </ul>
                                 </div>
                             </li><!--nav profil-->
-                            @endif
                     </ul>
                     <!--//app-menu-->
                 </nav>

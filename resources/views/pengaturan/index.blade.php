@@ -19,11 +19,11 @@
         <div class="mb-2">
             <input type="number" name="phone" class="form-control" id="" value="{{auth()->user()->phone}}">
         </div>
-        <label class="text-xl text-dark font-weight-bolder">Password</label>
+        <label class="text-xl text-dark font-weight-bolder">Password Baru</label>
         <div class="mb-2">
             <input type="password" name="password" class="form-control" id="password1">
         </div>
-        <label class="text-xl text-dark font-weight-bolder">Konfirmasi Password</label>
+        <label class="text-xl text-dark font-weight-bolder">Konfirmasi Password Baru</label>
         <div class="mb-2">
             <input type="password" name="password2" class="form-control" id="password2">
             <span id="passwordMessage"></span>

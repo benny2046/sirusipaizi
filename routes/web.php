@@ -37,13 +37,11 @@ Route::post('/reset-passwordd', [UserController::class, 'resetpassword']);
 ///////////////////
 // LANDING PAGE //
 //////////////////
-// Route::post('/landing', [LandingController::class, 'store'])->name('landing.store');
+
 Route::post('/landing/tambah-bukti-donasi', [LandingController::class, 'store'])->name('landing.store');
 
 Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-// Route::get('/landing/home', [LandingController::class, 'index2'])->name('landing.index2');
 
-// Route::get('/chart', [LandingController::class, 'chart'])->name('landing.chart');
 Route::get('/landing/about', [LandingController::class, 'indexabout'])->name('landing.about');
 Route::get('/landing/pendaftaran', [LandingController::class, 'reservasi'])->name('landing.reservasi');
 Route::get('/landing/kontak', [LandingController::class, 'kontak'])->name('landing.kontak');
@@ -112,11 +110,11 @@ Route::resource('/laporanpasien',  \App\Http\Controllers\LaporanPasienController
 ################
 // Pengaturan //
 ################
+// Route::middleware(['auth','isadmin_pengunjung'])->group(function () {
+    // });
+});
 Route::get('/pengaturan-profile', [UserController::class, 'index1'])->name('pengaturan.index');
-Route::middleware(['auth','isadmin_pengunjung'])->group(function () {
 Route::post('/pengaturan-ubah', [UserController::class, 'resetpassword']);
-});
-});
 
 ######################################################################################################################################################################
 
@@ -124,10 +122,10 @@ Route::post('/pengaturan-ubah', [UserController::class, 'resetpassword']);
 // PENGUNJUNG //
 ///////////////
 Route::middleware(['auth','isadmin_pengunjung'])->group(function () {
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi.index');// Menampilkan semua data reservasi
-Route::get('/create/reservasi/', [ReservasiController::class, 'create'])->name('reservasi.create');// Route untuk menampilkan form tambah reservasi
-Route::post('/reservasi', [ReservasiController::class, 'store'])->name('reservasi.store');// Route untuk menyimpan data reservasi yang baru
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+    Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi.index');// Menampilkan semua data reservasi
+    Route::get('/create/reservasi/', [ReservasiController::class, 'create'])->name('reservasi.create');// Route untuk menampilkan form tambah reservasi
+    Route::post('/reservasi', [ReservasiController::class, 'store'])->name('reservasi.store');// Route untuk menyimpan data reservasi yang baru
 });
 Route::resource('/',  \App\Http\Controllers\LandingController::class);
 Route::get('/landing', [KamarController::class, 'getRoomStatusCount'])->name('kamar.getRoomStatusCount');
