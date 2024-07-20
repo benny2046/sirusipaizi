@@ -100,10 +100,10 @@
                         <div class="card-body">
                             <p>Ruangan terdiri dari :</p>
                             <ul>
-                                <li>9 kamar tidur</li>
-                                <li>3 kamar mandi</li>
-                                <li>1 dapur umum</li>
-                                <li>1 kamar belajar</li>
+                                <li>4 kamar tidur</li>
+                                <li>kamar mandi</li>
+                                <li>dapur umum</li>
+                                <li>Ruang tamu</li>
                                 <li>1 garasi</li>
                             </ul>
                             <p>Sarana Prasarana :</p>
@@ -131,10 +131,10 @@
                         </div>
                         <div class="card-body">
                             <ol>
-                                <li>RUMAH SINGGAH HANYA DIPERUNTUKKAN UNTUK MASYARAKAT BANGKA BELITUNG YANG AKAN BEROBAT DI
-                                    JAKARTA.</li>
+                                <li>RUMAH SINGGAH HANYA DIPERUNTUKKAN UNTUK MASYARAKAT YANG AKAN BEROBAT DI
+                                    Padang.</li>
                                 <li>WAJIB MELAPOR KEPADA PENGELOLA RUMAH SINGGAH SELAMBAT-LAMBATNYA H-1 SEBELUM MEMASUKI RUMAH
-                                    SINGGAH DENGAN MENYERTAKAN FOTOKOPI KTP, KARTU KELUARGA DAN SURAT RUJUKAN DAIR RUMAH SAKIT
+                                    SINGGAH DENGAN MENYERTAKAN FOTOKOPI KTP, KARTU KELUARGA DAN SURAT RUJUKAN DARI RUMAH SAKIT
                                     DI DAERAH.</li>
                                 <li>PENDAMPING PASIEN MAKSIMAL 1 (SATU) ORANG.</li>
                                 <li>BERKELAKUAN BAIK, MENJAGA KEBERSIHAN DAN KETERTIBAN, MEMBUANG SAMPAH PADA TEMPAT YANG TELAH
@@ -144,8 +144,7 @@
                                 <li>PASIEN WAJIB MENYERTAKAN SURAT KETERANGAN DOKTER YANG MENYATAKAN TIDAK MENDERITA PENYAKIT
                                     MENULAR.</li>
                                 <li>DILARANG MEROKOK DI DALAM KAMAR DAN AREA RUMAH SINGGAH.</li>
-                                <li>DILARANG MEMBAWA ATAU MENYIMPAN BARANG MILIK DAERAH ATAU ASET MILIK PROVINSI KEPULAUAN
-                                    BANGKA BELITUNG YANG ADA PADA RUMAH SINGGAH PROVINSI KEPULAUAN BANGKA BELITUNG DI JAKARTA.
+                                <li>DILARANG MEMBAWA ATAU MENYIMPAN BARANG MILIK DAERAH ATAU ASET MILIK PROVINSI YANG ADA PADA RUMAH SINGGAH DI PADANG.
                                 </li>
                                 <li>APABILA PASIEN DAN/ATAU PENDAMPING MELANGGAR ATURAN RUMAH SINGGAH, YANG BERSANGKUTAN
                                     BERSEDIA UNTUK DIKELUARKAN DARI RUMAH SINGGAH TANPA ALASAN APAPUN.</li>

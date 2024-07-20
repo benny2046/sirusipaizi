@@ -190,7 +190,7 @@
                             <h4 class="mb-3">Jenis Kelamin</h4>
                             <form id="filterForm1" method="GET" action="/landing">
                                 @csrf
-                                
+
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="start_date1">Tanggal Awal:</label>
@@ -214,7 +214,7 @@
                         <div class="service-item bg-light rounded h-100 p-5">
                             <h4 class="mb3">Daerah Asal</h4>
                             <form id="filterForm2" method="GET" action="/landing">
-                                
+
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="start_date2">Tanggal Awal:</label>
@@ -241,7 +241,7 @@
                         <div class="service-item bg-light rounded h-100 p-5">
                             <h4 class="mb-3">Jumlah Sahabat yang Menerima Manfaat</h4>
                             <form id="filterForm3" method="GET" action="/landing">
-                                
+
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="start_date3">Tanggal Awal:</label>
@@ -265,7 +265,7 @@
                         <div class="service-item bg-light rounded h-100 p-5">
                             <h4 class="mb-3">Penyakit</h4>
                             <form id="filterForm4" method="GET" action="/landing">
-                                
+
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="start_date4">Tanggal Awal:</label>
@@ -464,7 +464,7 @@
             });
 
             $.ajax({
-              
+
                 method: 'GET',
                 data: filters,
                 success: function(response) {
@@ -485,7 +485,7 @@
             });
 
             $.ajax({
-                
+
                 method: 'GET',
                 data: filters,
                 success: function(response) {
