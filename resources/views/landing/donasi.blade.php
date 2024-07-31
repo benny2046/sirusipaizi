@@ -6,7 +6,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
-                <h1>Donasi Anda Mengubah Hidup Banyak Orang</h1> -->
+                <h1>Donasi Anda Mengubah Hidup Banyak Orang</h1>
                 <div class="col-12">
                     <button type="button" class="btn btn-primary rounded-pill py-3 px-5 mt-3"
                         data-toggle="modal" data-target="#donasiModal">
@@ -17,7 +17,7 @@
         </div>
     </div>
     <!-- donasi End -->
-    {{-- transefer --}}
+    <!-- transefer -->
     <section class="wpb-content-wrapper">
         <div class="vc_row wpb_row row pt-3 mt-4">
             <div class="vc_column_container col-md-12">

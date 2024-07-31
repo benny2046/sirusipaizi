@@ -65,7 +65,7 @@
                                 <div class="col-auto">
                                     <div class="item-label">
                                         <strong>
-                                            <label for="bukti">Bukti Donasi (Foto)</label>
+                                            <label for="bukti">Bukti Donasi (.jpeg, .png, .jpg, .gif, .svg)</label>
                                         </strong>
                                     </div>
                                     <div class="item-data">

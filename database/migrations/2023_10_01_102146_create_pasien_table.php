@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('pendidikan');
             $table->string('pekerjaan');
             $table->string('jenis_penyakit');
-            $table->string('kategori_penyakit');
+            $table->string('kategori_penyakit',['checkin', 'checkout']);
             $table->enum('status_rawat', ['checkin', 'checkout']); // Status checkin atau checkout
             $table->date('tanggal_masuk');
             $table->foreignId('kamar_id');

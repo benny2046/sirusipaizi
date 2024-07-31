@@ -28,10 +28,36 @@
             </form>
         </div>
     </div>
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Pasien</h5>
+                    <p class="card-text">{{ $totalPasien }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Rata-rata Menginap</h5>
+                    <p class="card-text">{{ $rataMenginap }} hari</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Rentang Lama Menginap</h5>
+                    <p class="card-text">{{ $minLamaMenginap }} - {{ $maxLamaMenginap }} hari</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-auto mb-3">
         <div class="page-utilities">
             <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
-                <div class="col-auto">
+                {{-- <div class="col-auto">
                     <form class="docs-search-form row gx-1 align-items-center" action="{{ route('laporanpasien.index') }}"
                         method="GET">
                         <div class="col-auto">
@@ -39,7 +65,7 @@
                                 placeholder="Search">
                         </div>
                     </form>
-                </div><!--//col-->
+                </div><!--//col--> --}}
                 <div class="col-auto">
                     <div class="modal fade" dty id="download" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -93,8 +119,7 @@
                                 </button>
 
                             </li>
-                            <li>
-                                {{-- <a class="dropdown-item" href="{{route('exportpasien')}}"> --}}
+                            {{-- <li>
                                 <button type="button" class="dropdown-item" data-bs-toggle="modal"
                                     data-bs-target="#pasienexport">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -104,7 +129,7 @@
                                     </svg> Excel
                                 </button>
 
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                     <!--//dropdown-->
@@ -152,35 +177,30 @@
                         <table class="table app-table-hover table-bordered mb-0 text-left">
                             <thead>
                                 <tr>
-                                    <th class="cell">No</th>
-                                    <th class="cell" style="text-align:center;">Nama Pasien</th>
-                                    <th class="cell" style="text-align:center;">Jenis Kelamin</th>
-                                    <th class="cell" style="text-align:center;">Alamat</th>
-                                    <th class="cell" style="text-align:center;">Jenis Penyakit</th>
-                                    <th class="cell" style="text-align:center;">Tanggal Masuk</th>
-                                    <th class="cell" style="text-align:center;">Tanggal Keluar</th>
-                                    <th class="cell" style="text-align:center;">Aksi</th>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Asal Daerah</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Jenis Penyakit</th>
+                                    <th>Kategori Penyakit</th>
+                                    <th>Tanggal Masuk</th>
+                                    <th>Tanggal Checkout</th>
+                                    <th>Lama Menginap (hari)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $no = 1; ?>
-                                @foreach ($varlaporanpasien as $laporanpasien)
+                                @foreach ($formattedPasiens as $pasien)
                                     <tr>
-                                        <td class="cell">{{ $no++ }}</td>
-                                        <td class="cell">{{ $laporanpasien->nama }}</td>
-                                        <td class="cell">{{ $laporanpasien->jeniskelamin }}</td>
-                                        <td class="cell">{{ $laporanpasien->alamat }}</td>
-                                        <td class="cell">{{ $laporanpasien->jenis_penyakit }}</td>
-                                        <td class="cell" style="text-align:center;">
-                                            <span>{{ $laporanpasien->tanggal_masuk }}</span>
-                                        </td>
-                                        <td class="cell" style="text-align:center;">
-                                            <span>{{ $laporanpasien->deleted_at ? $laporanpasien->deleted_at->format('d-m-Y') : '' }}</span>
-                                        </td>
-                                        <td class="cell" style="text-align:center;">
-                                            <a class="btn-sm app-btn-secondary"
-                                                href="{{ route('laporanpasien.show', $laporanpasien->id) }}">Detail</a>
-                                        </td>
+                                        <td>{{ $no++}}</td>
+                                        <td>{{ $pasien['nama'] }}</td>
+                                        <td>{{ $pasien['kelurahan'] }}</td>
+                                        <td>{{ $pasien['jeniskelamin'] }}</td>
+                                        <td>{{ $pasien['jenis_penyakit'] }}</td>
+                                        <td>{{ $pasien['kategori_penyakit'] }}</td>
+                                        <td>{{ $pasien['tanggal_masuk'] }}</td>
+                                        <td>{{ $pasien['deleted_at'] }}</td>
+                                        <td>{{ $pasien['lama_menginap'] }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -188,9 +208,6 @@
                     </div><!--//table-responsive-->
                 </div><!--//app-card-body-->
             </div><!--//app-card-->
-            <div class="pagination justify-content-center">
-                {{ $varlaporanpasien->links('vendor.pagination.bootstrap-5') }}
-            </div>
         </div><!--//tab-pane-->
     </div>
     <div class="modal fade" dty id="pasienpdf" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -224,6 +241,52 @@
             </div>
         </div>
     </div>
+
+    
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h4>Asal Pasien</h4>
+            <ul class="list-group">
+                @foreach ($asalPasien as $daerah => $jumlah)
+                    <li class="list-group-item d-flex justify-content-between align-items-center">{{ $daerah }}:
+                        {{ $jumlah }} pasien</li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4>Jenis Kelamin Pasien</h4>
+            <ul class="list-group">
+                @foreach ($jenisPasien as $jenis => $jumlah)
+                    <li class="list-group-item d-flex justify-content-between align-items-center">{{ $jenis }}:
+                        {{ $jumlah }} pasien</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h4>Jenis Penyakit Pasien</h4>
+            <ul class="list-group">
+                @foreach ($penyakitPasien as $penyakit => $jumlah)
+                    <li class="list-group-item d-flex justify-content-between">{{ $penyakit }}:
+                        {{ $jumlah }} pasien</li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4>Kategori Penyakit Pasien</h4>
+            <ul class="list-group">
+                @foreach ($kpenyakitPasien as $kpenyakit => $jumlah)
+                    <li class="list-group-item d-flex justify-content-between">{{ $kpenyakit }}:
+                        {{ $jumlah }} pasien</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>

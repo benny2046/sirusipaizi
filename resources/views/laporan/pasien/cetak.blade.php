@@ -4,84 +4,77 @@
     <title>Laporan Pasien</title>
     <!-- Gaya CSS atau eksternal stylesheet -->
     <style>
-        /* Gaya untuk tabel */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-/* Gaya untuk header kolom */
-table th {
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-/* Gaya untuk sel data */
-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-/* Gaya alternatif untuk baris */
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Gaya untuk hover */
-table tr:hover {
-    background-color: #f5f5f5;
-}
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .info {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
-<body>
-    <h1>Laporan Pasien</h1>
-    <table border="1">
+<>
+
+    <h1>Laporan Rumah Singgah Pasien</h1>
+
+    <div class="info">
+        <h2>Informasi Umum</h2>
+        <p><strong>Nama Rumah Singgah:</strong> Rumah Singgah IZI Padang</p>
+        <p><strong>Alamat:</strong> Jl. Jati IV No.14, RT.03/RW.3, Jati Baru, Kec. Padang Tim., Kota Padang, Sumatera Barat</p>
+        <p><strong>Periode Laporan:</strong> {{ $awal }} - {{ $akhir }}</p>
+        <p><strong>Total Pasien:</strong> {{ $totalPasien }}</p>
+        <p><strong>Total Lama Menginap (hari):</strong> {{ $totalHari }}</p>
+        <p><strong>Rata-Rata Lama Menginap (hari):</strong> {{ $rataMenginap }}</p>
+        <p><strong>Lama Menginap Minimum (hari):</strong> {{ $minLamaMenginap }}</p>
+        <p><strong>Lama Menginap Maksimum (hari):</strong> {{ $maxLamaMenginap }}</p>
+    </div>
+
+    <table>
         <thead>
             <tr>
-                <th>No</th>
-                <th>Nama RSP</th>
-                <th>Nama Pasien</th>
+                <th>Nama</th>
                 <th>Alamat</th>
-                <th>Kelurahan</th>
-                <th>Kecamatan</th>
-                <th>Kabupaten</th>
-                <th>Provinsi</th>
+                <th>Asal Daerah</th>
                 <th>Jenis Kelamin</th>
-                <th>Usia</th>
                 <th>Pendidikan</th>
                 <th>Pekerjaan</th>
                 <th>Jenis Penyakit</th>
                 <th>Kategori Penyakit</th>
-                <th>Status Rawat</th>
                 <th>Tanggal Masuk</th>
-                <th>Tanggal Check In</th>
-                <th>Tanggal Check Out</th>
+                <th>Tanggal Checkout</th>
+                <th>Lama Menginap (hari)</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ( $data as $dataa )
-            <tr>
-                <td>{{ $dataa->id }}</td>
-                <td>{{ $dataa->nama_rsp }}</td>
-                <td>{{ $dataa->nama }}</td>
-                <td>{{ $dataa->alamat }}</td>
-                <td>{{ $dataa->kelurahan }}</td>
-                <td>{{ $dataa->kecamatan }}</td>
-                <td>{{ $dataa->kabupaten }}</td>
-                <td>{{ $dataa->provinsi }}</td>
-                <td>{{ $dataa->jeniskelamin }}</td>
-                <td>{{ $dataa->umur }}</td>
-                <td>{{ $dataa->pendidikan }}</td>
-                <td>{{ $dataa->pekerjaan }}</td>
-                <td>{{ $dataa->jenis_penyakit }}</td>
-                <td>{{ $dataa->kategori_penyakit }}</td>
-                <td>{{ $dataa->status_rawat }}</td>
-                <td>{{ $dataa->tanggal_masuk }}</td>
-                <td>{{ $dataa->created_at->format('Y-m-d') }}</td>
-                <td>{{ $dataa->deleted_at ? $dataa->deleted_at->format('Y-m-d') : '' }}</td>
-            </tr>
+            @foreach($data as $pasien)
+                <tr>
+                    <td>{{ $pasien['nama'] }}</td>
+                    <td>{{ $pasien['alamat'] }}</td>
+                    <td>{{ $pasien['kelurahan'] }}</td>
+                    <td>{{ $pasien['jeniskelamin'] }}</td>
+                    <td>{{ $pasien['pendidikan'] }}</td>
+                    <td>{{ $pasien['pekerjaan'] }}</td>
+                    <td>{{ $pasien['jenis_penyakit'] }}</td>
+                    <td>{{ $pasien['kategori_penyakit'] }}</td>
+                    <td>{{ $pasien['tanggal_masuk'] }}</td>
+                    <td>{{ $pasien['deleted_at'] }}</td>
+                    <td>{{ $pasien['lama_menginap'] }}</td>
+                </tr>
             @endforeach
         </tbody>
     </table>
